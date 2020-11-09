@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Random Sentence<title>
+    <style type="text/css">
+    	#max{
+    		margin: auto;
+    		font-size: 30pt;
+    	}
+    	#rnbutton{
+    		margin: auto;
+    		width: 30px;
+    	}
+    </style>
+    <script type="text/javascript">
+    	initText = "The";
+    	adjctList = [""];
+    	nounList = [""];
+    	verbList = [""];
+    	adverbList = [""];
+
+    	function RandomSentence(){
+    		outstring = initText;
+    		outstring += RandomElement(adjctList);
+    		outstring += RandomElement(nounList);
+    		outstring += RandomElement(verbList);
+    		outstring += RandomElement(adverbList);
+    		outstring += "."
+
+    		document.getElementById("max").innerHTML = outstring;
+    		return();
+    	}
+    	function RandomElement(inputList){
+    		index = Math.Floor(Math.Random() * inputList.length);
+    		return(inputList[index]);
+    	}
+
+    	document.getElementById("rnbutton").addEventListener("click", RandomSentence())
+    </script>
+  </head>
+  <body>
+  	<h1 id="max">Text will appear here.</h1>
+  	<button type="button" id="rnbutton">Click me!</button>
+  </body>
+</html>
